@@ -77,6 +77,10 @@ const ApplicationComponents = ({ path }) => {
                     <Tag key={key}>{scope}</Tag>
                   ))}
                 </Line>
+                <Line>
+                  <label>Rating:</label>
+                  <Tag>{component.rating}/5</Tag>
+                </Line>
               </Container>
             )) }
           </Containers>
