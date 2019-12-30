@@ -7,6 +7,7 @@ import Zone from '../../ui/Zone'
 import Containers from '../../ui/Containers'
 import Container from '../../ui/Container'
 import Tag from '../../ui/Tag'
+import { fontColors } from '../../../app/layoutConfig'
 
 const applicationComponents = [
   {
@@ -89,7 +90,7 @@ const Line = styled.div`
   line-height: 25px;
   vertical-align: middle;
   & h3 {
-    color: #2E3345;
+    color: ${fontColors.primaryAlt};
     font-weight: bold;
   }
 `

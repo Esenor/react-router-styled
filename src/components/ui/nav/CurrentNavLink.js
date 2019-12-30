@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 import DefaultNavLink from './DefaultNavLink'
+import { fontColors } from '../../../app/layoutConfig'
 
 const CurrentNavLink = styled(DefaultNavLink)`
-  color: #FFFFFF;
+  color: ${fontColors.secondaryAlt};
   font-weight: bold;
 `
 

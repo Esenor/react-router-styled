@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import NavLink from '../ui/nav/NavLink'
 import { getMenuItems } from '../../app/menu'
+import { backgroundColors, fontColors } from '../../app/layoutConfig'
 
 const renderMenuItems = (menuItems = []) => menuItems.map(group => (
   <section key={group.code}>
@@ -24,7 +25,7 @@ const VerticalMenu = () => {
 }
 
 const LinkHeader = styled.div`
-  color: #a9afbf;
+  color: ${fontColors.secondary};
   text-transform: uppercase;
   font-size: 14px;
   margin: 10px 0px;
@@ -40,7 +41,7 @@ const Menu = styled.nav`
   justify-content: flex-start;
   align-content: flex-start;
   /*  */
-  background: #2E3345;
+  background: ${backgroundColors.secondary};
 `
 
 const Links = styled.nav`

@@ -1,11 +1,10 @@
 import styled from 'styled-components'
+import { backgroundColors } from '../../app/layoutConfig'
 
 const defineBackground = type => {
   switch (type) {
-    case 'orange':
-      return 'coral'
     default:
-      return '#EAEAEA'
+      return backgroundColors.primaryAlt
   }
 }
 
