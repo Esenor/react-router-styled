@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { func } from 'prop-types'
 import styled from 'styled-components'
-import Zone from '../../ui/Zone'
+import Zone from '../../ui/container/Zone'
 import InputText from '../../ui/input/InputText'
 import InputPassword from '../../ui/input/InputPassword'
 import { backgroundColors, fontColors } from '../../../app/layoutConfig'

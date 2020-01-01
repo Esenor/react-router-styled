@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import { array, string, oneOfType } from 'prop-types'
+import { array, string, object, oneOfType } from 'prop-types'
 import DefaultLayout from '../../layout/DefaultLayout'
-import Zone from '../../ui/Zone'
+import Zone from '../../ui/container/Zone'
 
 const Placeholder = ({ path, children }) => {
   return (
@@ -26,7 +26,7 @@ Placeholder.propTypes = {
     string, array
   ]),
   children: oneOfType([
-    string, array
+    object, array
   ])
 }
 

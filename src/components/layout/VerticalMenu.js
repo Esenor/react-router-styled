@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import NavLink from '../ui/nav/NavLink'
+import VerticalMenuNavLink from '../ui/nav/VerticalMenuNavLink'
 import { getMenuItems } from '../../app/menu'
 import { backgroundColors, fontColors } from '../../app/layoutConfig'
 
@@ -9,7 +9,7 @@ const renderMenuItems = (menuItems = []) => menuItems.map(group => (
     <Links>
       <LinkHeader>{group.label}</LinkHeader>
       {group.items.map(item => (
-        <NavLink key={item.code} path={item.path}>{item.label}</NavLink>
+        <VerticalMenuNavLink key={item.code} path={item.path}>{item.label}</VerticalMenuNavLink>
       ))}
     </Links>
   </section>

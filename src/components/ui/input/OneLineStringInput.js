@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { backgroundColors } from '../app/layoutConfig'
+import { backgroundColors } from '../../../app/layoutConfig'
 
-export const OneLinetringInput = styled.input`
+const OneLineStringInput = styled.input`
   padding: 5px;
   border-radius: 2px;
   border: none;
@@ -12,3 +12,5 @@ export const OneLinetringInput = styled.input`
     transition: 250ms ease all;
   }
 `
+
+export default OneLineStringInput

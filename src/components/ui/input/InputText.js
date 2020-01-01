@@ -1,10 +1,10 @@
 import React from 'react'
 import { string, func } from 'prop-types'
-import { OneLinetringInput } from '../../../styledComponents/input'
+import OneLineStringInput from './OneLineStringInput'
 
 const InputText = ({ placeholder = '', onChange = () => {} }) => {
   return (
-    <OneLinetringInput type="text" placeholder={placeholder} onChange={onChange}/>
+    <OneLineStringInput type="text" placeholder={placeholder} onChange={onChange}/>
   )
 }
 

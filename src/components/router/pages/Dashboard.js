@@ -2,7 +2,7 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 import { array, string, oneOfType } from 'prop-types'
 import DefaultLayout from '../../layout/DefaultLayout'
-import Zone from '../../ui/Zone'
+import Zone from '../../ui/container/Zone'
 
 const Dashboard = ({ path }) => {
   return (

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { backgroundColors } from '../../app/layoutConfig'
+import { backgroundColors } from '../../../app/layoutConfig'
 
 const Zone = styled.div`
   background: ${backgroundColors.primary};
