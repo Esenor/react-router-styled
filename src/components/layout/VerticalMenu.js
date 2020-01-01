@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import VerticalMenuNavLink from '../ui/nav/VerticalMenuNavLink'
 import { getMenuItems } from '../../app/menu'
-import { backgroundColors, fontColors } from '../../app/layoutConfig'
+import { backgroundColors, fontColors } from '../../app/skin'
 
 const renderMenuItems = (menuItems = []) => menuItems.map(group => (
   <section key={group.code}>

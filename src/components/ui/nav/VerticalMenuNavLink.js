@@ -2,7 +2,7 @@ import React from 'react'
 import { Switch, Route, Link } from 'react-router-dom'
 import { string } from 'prop-types'
 import styled from 'styled-components'
-import { fontColors } from '../../../app/layoutConfig'
+import { fontColors } from '../../../app/skin'
 
 const VerticalMenuNavLink = ({ path = '/', children = (<span>{path}</span>) }) => {
   return (

@@ -4,28 +4,19 @@ import styled from 'styled-components'
 import Zone from '../../ui/container/Zone'
 import InputText from '../../ui/input/InputText'
 import InputPassword from '../../ui/input/InputPassword'
-import { backgroundColors, fontColors } from '../../../app/layoutConfig'
+import { backgroundColors, fontColors } from '../../../app/skin'
+import { isAuthorized } from '../../../app/authentication'
 
 const Login = ({ onLogin }) => {
   const [credentials, updateCredentials] = useState({
     usernameInput: '',
-    passwordInput: '',
-    authorizedCredentials: [
-      {
-        username: 'admin',
-        password: 'admin'
-      },
-      {
-        username: 'foo',
-        password: 'bar'
-      }
-    ]
+    passwordInput: ''
   })
   const updateUsernameInput = event => updateCredentials({ ...credentials, ...{ usernameInput: event.target.value } })
   const updatePasswordInput = event => updateCredentials({ ...credentials, ...{ passwordInput: event.target.value } })
   const validate = (event) => {
     event.preventDefault()
-    if (isAuthorized(credentials.usernameInput, credentials.passwordInput, credentials.authorizedCredentials)) {
+    if (isAuthorized(credentials.usernameInput, credentials.passwordInput)) {
       onLogin()
       return true
     } else {
@@ -43,12 +34,6 @@ const Login = ({ onLogin }) => {
       </LoginForm>
     </LoginContainer>
   )
-}
-
-const isAuthorized = (username, password, authorizedCredentials = []) => {
-  return typeof authorizedCredentials.find((authorizedCredential) => {
-    return authorizedCredential.username === username && authorizedCredential.password === password
-  }) !== 'undefined'
 }
 
 const LoginContainer = styled(Zone)`

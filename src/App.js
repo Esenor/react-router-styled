@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 import Router from './components/router/Router'
-import { backgroundColors, fontColors } from './app/layoutConfig'
+import { backgroundColors, fontColors } from './app/skin'
 import './styles/reset.css'
 
 const App = () => {
