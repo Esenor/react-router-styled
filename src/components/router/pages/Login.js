@@ -1,22 +1,54 @@
-import React from 'react'
-import { string, func } from 'prop-types'
+import React, { useState } from 'react'
+import { func } from 'prop-types'
 import styled from 'styled-components'
 import Zone from '../../ui/Zone'
 import InputText from '../../ui/input/InputText'
 import InputPassword from '../../ui/input/InputPassword'
 import { backgroundColors, fontColors } from '../../../app/layoutConfig'
 
-const Login = ({ path, onLogin }) => {
+const Login = ({ onLogin }) => {
+  const [credentials, updateCredentials] = useState({
+    usernameInput: '',
+    passwordInput: '',
+    authorizedCredentials: [
+      {
+        username: 'admin',
+        password: 'admin'
+      },
+      {
+        username: 'foo',
+        password: 'bar'
+      }
+    ]
+  })
+  const updateUsernameInput = event => updateCredentials({ ...credentials, ...{ usernameInput: event.target.value } })
+  const updatePasswordInput = event => updateCredentials({ ...credentials, ...{ passwordInput: event.target.value } })
+  const validate = (event) => {
+    event.preventDefault()
+    if (isAuthorized(credentials.usernameInput, credentials.passwordInput, credentials.authorizedCredentials)) {
+      onLogin()
+      return true
+    } else {
+      window.alert('Invalid credential')
+      return false
+    }
+  }
   return (
     <LoginContainer>
       <LoginTitle>Login</LoginTitle>
-      <LoginForm>
-        <InputText type="text" placeholder="username"/>
-        <InputPassword type="Password" placeholder="password"/>
-        <LoginButton onClick={onLogin}>Login</LoginButton>
+      <LoginForm onSubmit={validate}>
+        <InputText type="text" placeholder="Username" onChange={updateUsernameInput} value={credentials.usernameInput}/>
+        <InputPassword type="Password" placeholder="Password" onChange={updatePasswordInput} value={credentials.passwordInput}/>
+        <LoginButton>Login</LoginButton>
       </LoginForm>
     </LoginContainer>
   )
+}
+
+const isAuthorized = (username, password, authorizedCredentials = []) => {
+  return typeof authorizedCredentials.find((authorizedCredential) => {
+    return authorizedCredential.username === username && authorizedCredential.password === password
+  }) !== 'undefined'
 }
 
 const LoginContainer = styled(Zone)`
@@ -29,7 +61,7 @@ const LoginTitle = styled.h1`
   font-size: 18px;
   margin: 20px;
 `
-const LoginForm = styled.div`
+const LoginForm = styled.form`
 line-height: 50px;
 `
 const LoginButton = styled.button`
@@ -55,7 +87,6 @@ const LoginButton = styled.button`
 `
 
 Login.propTypes = {
-  path: string,
   onLogin: func
 }
 
