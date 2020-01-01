@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { BrowserRouter, Switch } from 'react-router-dom'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
-import ApplicationComponents from './pages/ApplicationComponents'
+import Placeholder from './pages/Placeholder'
 
 const Router = () => {
   const [isLogin, updateLoginState] = useState(false)
@@ -15,8 +15,11 @@ const Router = () => {
         {
           (isConnected())
             ? <React.Fragment>
-              <ApplicationComponents path="/application-components" />
-              <Dashboard path="/" />
+              <Placeholder path="/artifacts"><p>/artifacts</p></Placeholder>
+              <Placeholder path="/assets"><p>/assets</p></Placeholder>
+              <Placeholder path="/docker-images"><p>/docker-images</p></Placeholder>
+              <Placeholder path="/libraries"><p>/libraries</p></Placeholder>
+              <Dashboard path={['/', '/map']} />
             </React.Fragment>
             : <React.Fragment>
               <Login onLogin={() => updateLoginState(true)}/>

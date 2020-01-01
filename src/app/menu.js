@@ -7,11 +7,6 @@ const menuItems = [
         code: 'map',
         label: 'Map',
         path: '/'
-      },
-      {
-        code: 'applicationComponents',
-        label: 'Application components',
-        path: '/application-components'
       }
     ]
   },

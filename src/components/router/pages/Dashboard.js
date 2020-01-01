@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import { string } from 'prop-types'
+import { array, string, oneOfType } from 'prop-types'
 import DefaultLayout from '../../layout/DefaultLayout'
 import Zone from '../../ui/Zone'
 
@@ -25,7 +25,9 @@ const Dashboard = ({ path }) => {
 }
 
 Dashboard.propTypes = {
-  path: string
+  path: oneOfType([
+    string, array
+  ])
 }
 
 export default (Dashboard)

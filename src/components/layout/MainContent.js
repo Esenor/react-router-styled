@@ -13,7 +13,6 @@ const MainContent = ({ children }) => {
 const Section = styled.section`
   margin: 70px 20px 30px 20px;
   width: 100%;
-  /*  */
 `
 
 MainContent.propTypes = {
